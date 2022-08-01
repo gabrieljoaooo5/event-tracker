@@ -43,9 +43,6 @@ function App() {
     }
     setEventos([...eventos])
   }
-  const deletarEvento = (id: number) => {
-    setEventos([...eventos.filter(evento => evento.id !== id)])
-  }
 
   const aplicarFiltro = (data: Date | null) => {
     setFiltro(data)
@@ -66,7 +63,7 @@ function App() {
         </Card>
         <hr />
         <Card>
-          <ListaDeEventos aoFiltroAplicado={aplicarFiltro} aoAlterarStatus={alterarStatusEvento} aoDeletarEvento={deletarEvento} eventos={filtrados} />
+          <ListaDeEventos aoFiltroAplicado={aplicarFiltro} aoAlterarStatus={alterarStatusEvento} eventos={filtrados} />
         </Card>
       </div>
       <div className={style.Coluna}>
