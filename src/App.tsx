@@ -5,6 +5,7 @@ import Formulario from './components/Formulario';
 import { IEvento } from './interfaces/IEvento';
 import Calendario from './components/Calendario';
 import ListaDeEventos from './components/ListaDeEventos';
+import { RecoilRoot } from 'recoil';
 
 function App() {
 
@@ -57,10 +58,11 @@ function App() {
     );
 
   return (
-    <div className={style.App}>
+    <RecoilRoot>
+      <div className={style.App}>
       <div className={style.Coluna}>
         <Card>
-          <Formulario aoSalvar={adicionarEvento} />
+          <Formulario />
         </Card>
         <hr />
         <Card>
@@ -68,9 +70,10 @@ function App() {
         </Card>
       </div>
       <div className={style.Coluna}>
-        <Calendario eventos={eventos} />
+        <Calendario />
       </div>
     </div>
+    </RecoilRoot>
   );
 }
 
